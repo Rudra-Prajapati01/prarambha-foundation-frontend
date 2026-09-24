@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react"
-
-import axios from "axios"
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 import {
   FaEnvelope,
@@ -10,88 +9,115 @@ import {
   FaTrash,
   FaCheck,
   FaExclamationTriangle,
-} from "react-icons/fa"
+} from "react-icons/fa";
 
-import AdminLayout from "../layouts/AdminLayout"
+import AdminLayout from "../layouts/AdminLayout";
 
 function Messages() {
+  const [messages, setMessages] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const [messages, setMessages] =
-    useState([])
+  const [toastMessage, setToastMessage] = useState("");
+  const [toastType, setToastType] = useState("");
 
-  const [loading, setLoading] =
-    useState(true)
+  const [showModal, setShowModal] = useState(false);
+  const [messageToDelete, setMessageToDelete] = useState(null);
+  const [isDeleting, setIsDeleting] = useState(false);
 
-  const [toastMessage, setToastMessage] = useState("")
-  const [toastType, setToastType] = useState("")
-  const [showModal, setShowModal] = useState(false)
-  const [messageToDelete, setMessageToDelete] = useState(null)
-  const [isDeleting, setIsDeleting] = useState(false)
+  // ==========================================
+  // DELETE MESSAGE
+  // ==========================================
 
   const confirmDelete = async () => {
     if (!messageToDelete) return;
+
     setIsDeleting(true);
+
     try {
-      await axios.delete(`http://localhost:5000/api/messages/${messageToDelete}`);
-      setMessages((prev) => prev.filter((msg) => msg._id !== messageToDelete));
+      await axios.delete(
+        `https://lightgrey-squid-753475.hostingersite.com/api/messages/${messageToDelete}`
+      );
+
+      setMessages((prev) =>
+        prev.filter((msg) => msg._id !== messageToDelete)
+      );
+
       setToastType("success");
       setToastMessage("Message deleted successfully.");
     } catch (error) {
+      console.log("Delete message error:", error);
+
       setToastType("error");
       setToastMessage("Failed to delete message. Please try again.");
     } finally {
       setIsDeleting(false);
       setShowModal(false);
       setMessageToDelete(null);
+
       setTimeout(() => setToastMessage(""), 3000);
     }
-  }
+  };
+
+  // ==========================================
+  // FETCH MESSAGES
+  // ==========================================
 
   useEffect(() => {
-
     const fetchMessages = async () => {
-
       try {
+        const { data } = await axios.get(
+          "https://lightgrey-squid-753475.hostingersite.com/api/messages"
+        );
 
-        const { data } =
-          await axios.get(
-            "http://localhost:5000/api/messages"
-          )
-
-        setMessages(data)
-
+        setMessages(data);
       } catch (error) {
-
-        console.log(error)
-
+        console.log("Fetch messages error:", error);
       } finally {
-
-        setLoading(false)
+        setLoading(false);
       }
-    }
+    };
 
-    fetchMessages()
-
-  }, [])
+    fetchMessages();
+  }, []);
 
   return (
-
     <AdminLayout>
+      {/* ==========================================
+          TOAST
+      ========================================== */}
 
-      {/* TOAST */}
       {toastMessage && (
-        <div className={`fixed top-24 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-full shadow-2xl z-50 flex items-center gap-2 animate-bounce text-white ${toastType === "success" ? "bg-green-500" : "bg-red-500"}`}>
-          {toastType === "success" ? <FaCheck /> : <FaExclamationTriangle />}
+        <div
+          className={`fixed top-24 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-full shadow-2xl z-50 flex items-center gap-2 animate-bounce text-white ${
+            toastType === "success" ? "bg-green-500" : "bg-red-500"
+          }`}
+        >
+          {toastType === "success" ? (
+            <FaCheck />
+          ) : (
+            <FaExclamationTriangle />
+          )}
+
           <span className="font-semibold">{toastMessage}</span>
         </div>
       )}
 
-      {/* CONFIRMATION MODAL */}
+      {/* ==========================================
+          CONFIRMATION MODAL
+      ========================================== */}
+
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl">
-            <h3 className="text-2xl font-bold text-[#0F172A] mb-4">Delete Message?</h3>
-            <p className="text-gray-600 mb-8">Are you sure you want to permanently delete this contact message?</p>
+            <h3 className="text-2xl font-bold text-[#0F172A] mb-4">
+              Delete Message?
+            </h3>
+
+            <p className="text-gray-600 mb-8">
+              Are you sure you want to permanently delete this contact
+              message?
+            </p>
+
             <div className="flex justify-end gap-4">
               <button
                 onClick={() => {
@@ -103,6 +129,7 @@ function Messages() {
               >
                 Cancel
               </button>
+
               <button
                 onClick={confirmDelete}
                 className="px-6 py-2.5 rounded-xl font-semibold text-white bg-red-500 hover:bg-red-600 transition-colors flex items-center gap-2"
@@ -115,10 +142,14 @@ function Messages() {
         </div>
       )}
 
+      {/* ==========================================
+          PAGE CONTENT
+      ========================================== */}
+
       <div className="p-8 bg-[#F8FAFC] min-h-screen">
+        {/* PAGE HEADER */}
 
         <div className="mb-10">
-
           <h1
             className="
               text-4xl
@@ -138,11 +169,13 @@ function Messages() {
           >
             View all inquiries sent from the website.
           </p>
-
         </div>
 
-        {loading ? (
+        {/* ==========================================
+            LOADING
+        ========================================== */}
 
+        {loading ? (
           <div
             className="
               flex
@@ -151,7 +184,6 @@ function Messages() {
               h-[400px]
             "
           >
-
             <div
               className="
                 text-2xl
@@ -161,10 +193,11 @@ function Messages() {
             >
               Loading Messages...
             </div>
-
           </div>
-
         ) : messages.length === 0 ? (
+          /* ==========================================
+             NO MESSAGES
+          ========================================== */
 
           <div
             className="
@@ -175,7 +208,6 @@ function Messages() {
               shadow-sm
             "
           >
-
             <div
               className="
                 w-24
@@ -213,10 +245,11 @@ function Messages() {
             >
               Website contact messages will appear here.
             </p>
-
           </div>
-
         ) : (
+          /* ==========================================
+             MESSAGES GRID
+          ========================================== */
 
           <div
             className="
@@ -226,9 +259,7 @@ function Messages() {
               gap-8
             "
           >
-
             {messages.map((msg) => (
-
               <div
                 key={msg._id}
                 className="
@@ -243,6 +274,9 @@ function Messages() {
                   border-gray-100
                 "
               >
+                {/* ==========================================
+                    USER INFO + DELETE
+                ========================================== */}
 
                 <div
                   className="
@@ -252,7 +286,6 @@ function Messages() {
                     mb-8
                   "
                 >
-
                   <div
                     className="
                       flex
@@ -260,7 +293,6 @@ function Messages() {
                       gap-4
                     "
                   >
-
                     <div
                       className="
                         w-16
@@ -278,7 +310,6 @@ function Messages() {
                     </div>
 
                     <div>
-
                       <h2
                         className="
                           text-2xl
@@ -297,9 +328,7 @@ function Messages() {
                       >
                         {msg.email}
                       </p>
-
                     </div>
-
                   </div>
 
                   <button
@@ -307,7 +336,9 @@ function Messages() {
                       setMessageToDelete(msg._id);
                       setShowModal(true);
                     }}
-                    disabled={isDeleting && messageToDelete === msg._id}
+                    disabled={
+                      isDeleting && messageToDelete === msg._id
+                    }
                     className="
                       p-3
                       text-red-500
@@ -323,11 +354,13 @@ function Messages() {
                   >
                     <FaTrash className="text-lg" />
                   </button>
-
                 </div>
 
-                <div className="mb-6">
+                {/* ==========================================
+                    SUBJECT
+                ========================================== */}
 
+                <div className="mb-6">
                   <div
                     className="
                       flex
@@ -336,7 +369,6 @@ function Messages() {
                       mb-3
                     "
                   >
-
                     <FaTag className="text-[#2563EB]" />
 
                     <h3
@@ -348,7 +380,6 @@ function Messages() {
                     >
                       Subject
                     </h3>
-
                   </div>
 
                   <div
@@ -361,11 +392,13 @@ function Messages() {
                   >
                     {msg.subject}
                   </div>
-
                 </div>
 
-                <div className="mb-6">
+                {/* ==========================================
+                    MESSAGE
+                ========================================== */}
 
+                <div className="mb-6">
                   <div
                     className="
                       flex
@@ -374,7 +407,6 @@ function Messages() {
                       mb-3
                     "
                   >
-
                     <FaEnvelope className="text-[#E63946]" />
 
                     <h3
@@ -386,7 +418,6 @@ function Messages() {
                     >
                       Message
                     </h3>
-
                   </div>
 
                   <div
@@ -400,8 +431,11 @@ function Messages() {
                   >
                     {msg.message}
                   </div>
-
                 </div>
+
+                {/* ==========================================
+                    DATE
+                ========================================== */}
 
                 <div
                   className="
@@ -414,29 +448,17 @@ function Messages() {
                     border-t
                   "
                 >
-
                   <FaCalendarAlt />
 
-                  {
-                    new Date(
-                      msg.createdAt
-                    ).toLocaleString()
-                  }
-
+                  {new Date(msg.createdAt).toLocaleString()}
                 </div>
-
               </div>
-
             ))}
-
           </div>
-
         )}
-
       </div>
-
     </AdminLayout>
-  )
+  );
 }
 
-export default Messages
+export default Messages;
