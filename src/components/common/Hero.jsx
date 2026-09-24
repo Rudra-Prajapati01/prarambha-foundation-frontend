@@ -24,7 +24,7 @@ export default function Hero({ pageData }) {
 
   const secondaryButton = heroData.secondaryButtonText || "Learn More"
 
-  const primaryButtonLink = heroData.buttonLink || "/support-us"
+  const primaryButtonLink = heroData.buttonLink || "/contact"
 
   const secondaryButtonLink = heroData.secondaryButtonLink || "/about"
 

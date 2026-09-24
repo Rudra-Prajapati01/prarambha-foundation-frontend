@@ -420,7 +420,7 @@ function Navbar({ pageData }) {
               {/* DONATE BUTTON */}
 
               <Link
-                to="/support-us"
+                to="/contact"
 
                 className="
                   hidden
