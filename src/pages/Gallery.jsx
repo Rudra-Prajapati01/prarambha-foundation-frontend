@@ -28,7 +28,7 @@ function Gallery() {
     const fetchGallery = async () => {
       try {
         const { data } = await axios.get(
-          "https://prarambha-backend.onrender.com/api/gallery"
+          "https://lightgrey-squid-753475.hostingersite.com/api/gallery"
         )
         setGallery(data)
       } catch (e) {
@@ -130,7 +130,7 @@ function Gallery() {
         OLD BACKEND UPLOAD IMAGE
     ===================================== */
 
-    return `https://prarambha-backend.onrender.com${path}`
+    return `https://lightgrey-squid-753475.hostingersite.com${path}`
   }
 
   const skeletonHeights = [280, 360, 300, 340, 260, 320]

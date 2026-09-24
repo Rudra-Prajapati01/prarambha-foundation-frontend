@@ -8,7 +8,7 @@ export default function ChairpersonSection({ data }) {
     data?.image
       ? data.image.startsWith("http")
         ? data.image
-        : `https://prarambha-backend.onrender.com${data.image}`
+        : `https://lightgrey-squid-753475.hostingersite.com${data.image}`
       : "https://i.pravatar.cc/500?img=47"
 
   return (

@@ -42,7 +42,7 @@ function Login() {
     try {
 
       const { data } = await axios.post(
-        "https://prarambha-backend.onrender.com/api/admin/login",
+        "https://lightgrey-squid-753475.hostingersite.com/api/admin/login",
         formData
       )
 

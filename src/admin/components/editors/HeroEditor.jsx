@@ -34,7 +34,7 @@ function HeroEditor({
     pageData.hero?.image
       ? pageData.hero.image.startsWith("http")
         ? pageData.hero.image
-        : `https://prarambha-backend.onrender.com${pageData.hero.image}`
+        : `https://lightgrey-squid-753475.hostingersite.com${pageData.hero.image}`
       : "https://via.placeholder.com/1200x700?text=Hero+Image"
 
   return (

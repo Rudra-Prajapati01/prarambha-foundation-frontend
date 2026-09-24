@@ -39,7 +39,7 @@ export default function Chairperson() {
 
           const response =
             await fetch(
-              "https://prarambha-backend.onrender.com/api/pages/about"
+              "https://lightgrey-squid-753475.hostingersite.com/api/pages/about"
             )
 
           const data =
@@ -78,7 +78,7 @@ export default function Chairperson() {
 
           ? chairData.image
 
-          : `https://prarambha-backend.onrender.com${chairData.image}`
+          : `https://lightgrey-squid-753475.hostingersite.com${chairData.image}`
 
       : "https://i.pravatar.cc/500?img=47"
 

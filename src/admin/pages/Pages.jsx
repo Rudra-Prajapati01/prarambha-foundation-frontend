@@ -168,7 +168,7 @@ function Pages() {
 
       const { data } =
         await axios.get(
-          `https://prarambha-backend.onrender.com/api/pages/${selectedPage}`
+          `https://lightgrey-squid-753475.hostingersite.com/api/pages/${selectedPage}`
         )
 
       if (data) {
@@ -194,7 +194,7 @@ function Pages() {
       setSuccess("")
 
       await axios.put(
-        `https://prarambha-backend.onrender.com/api/pages/${selectedPage}`,
+        `https://lightgrey-squid-753475.hostingersite.com/api/pages/${selectedPage}`,
         pageData
       )
 
@@ -245,7 +245,7 @@ function Pages() {
 
       const { data } =
         await axios.post(
-          "https://prarambha-backend.onrender.com/api/upload",
+          "https://lightgrey-squid-753475.hostingersite.com/api/upload",
           formData,
           {
             headers: {

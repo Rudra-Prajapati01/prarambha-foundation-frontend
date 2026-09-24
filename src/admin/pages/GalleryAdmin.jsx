@@ -46,7 +46,7 @@ function GalleryAdmin() {
     return typeof image === "string"
       && image.startsWith("http")
         ? image
-        : `https://prarambha-backend.onrender.com${image}`
+        : `https://lightgrey-squid-753475.hostingersite.com${image}`
   }
 
   /* =====================================
@@ -60,7 +60,7 @@ function GalleryAdmin() {
 
         const { data } =
           await axios.get(
-            "https://prarambha-backend.onrender.com/api/gallery"
+            "https://lightgrey-squid-753475.hostingersite.com/api/gallery"
           )
 
         setGallery(data)
@@ -125,7 +125,7 @@ function GalleryAdmin() {
 
         const res =
           await axios.post(
-            "https://prarambha-backend.onrender.com/api/upload",
+            "https://lightgrey-squid-753475.hostingersite.com/api/upload",
             data
           )
 
@@ -178,14 +178,14 @@ function GalleryAdmin() {
         if (editingId) {
 
           await axios.put(
-            `https://prarambha-backend.onrender.com/api/gallery/${editingId}`,
+            `https://lightgrey-squid-753475.hostingersite.com/api/gallery/${editingId}`,
             formData
           )
 
         } else {
 
           await axios.post(
-            "https://prarambha-backend.onrender.com/api/gallery",
+            "https://lightgrey-squid-753475.hostingersite.com/api/gallery",
             formData
           )
         }
@@ -271,7 +271,7 @@ function GalleryAdmin() {
       try {
 
         await axios.delete(
-          `https://prarambha-backend.onrender.com/api/gallery/${id}`
+          `https://lightgrey-squid-753475.hostingersite.com/api/gallery/${id}`
         )
 
         fetchGallery()

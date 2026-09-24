@@ -41,7 +41,7 @@ function Stories() {
 
                 const { data } =
                     await axios.get(
-                        "https://prarambha-backend.onrender.com/api/stories"
+                        "https://lightgrey-squid-753475.hostingersite.com/api/stories"
                     )
 
                 setStories(data)
@@ -119,7 +119,7 @@ function Stories() {
 
         /* OLD UPLOADS */
 
-        return `https://prarambha-backend.onrender.com${image}`
+        return `https://lightgrey-squid-753475.hostingersite.com${image}`
     }
 
     const handleImageError = (e) => {

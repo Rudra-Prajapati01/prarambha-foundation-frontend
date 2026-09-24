@@ -66,7 +66,7 @@ function Contact() {
 
           const { data } =
             await axios.get(
-              "https://prarambha-backend.onrender.com/api/pages/contact"
+              "https://lightgrey-squid-753475.hostingersite.com/api/pages/contact"
             )
 
           setContactData(data)
@@ -121,7 +121,7 @@ function Contact() {
     try {
 
       const response = await axios.post(
-        "https://prarambha-backend.onrender.com/api/messages",
+        "https://lightgrey-squid-753475.hostingersite.com/api/messages",
         formData,
         {
           timeout: 60000,

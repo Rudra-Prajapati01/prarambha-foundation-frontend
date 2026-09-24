@@ -13,7 +13,7 @@ function AboutHeroEditor({
     pageData?.hero?.image
       ? pageData.hero.image.startsWith("http")
         ? pageData.hero.image
-        : `https://prarambha-backend.onrender.com${pageData.hero.image}`
+        : `https://lightgrey-squid-753475.hostingersite.com${pageData.hero.image}`
       : "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&q=80"
 
   return (

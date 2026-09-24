@@ -15,7 +15,7 @@ function Programs({ pageData }) {
     if (image.startsWith("http"))
       return image
 
-    return `https://prarambha-backend.onrender.com${image}`
+    return `https://lightgrey-squid-753475.hostingersite.com${image}`
   }
 
   /* =====================================

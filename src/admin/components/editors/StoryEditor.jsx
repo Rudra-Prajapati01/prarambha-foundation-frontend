@@ -29,7 +29,7 @@ function StoryEditor() {
 
       const { data } =
         await axios.get(
-          "https://prarambha-backend.onrender.com/api/stories"
+          "https://lightgrey-squid-753475.hostingersite.com/api/stories"
         )
 
       setStories(data)
@@ -64,7 +64,7 @@ function StoryEditor() {
 
       const { data } =
         await axios.post(
-          "https://prarambha-backend.onrender.com/api/stories",
+          "https://lightgrey-squid-753475.hostingersite.com/api/stories",
           newStory
         )
 
@@ -89,7 +89,7 @@ function StoryEditor() {
     try {
 
       await axios.delete(
-        `https://prarambha-backend.onrender.com/api/stories/${id}`
+        `https://lightgrey-squid-753475.hostingersite.com/api/stories/${id}`
       )
 
       setStories((prev) =>
@@ -137,7 +137,7 @@ function StoryEditor() {
     return typeof image === "string"
       && image.startsWith("http")
       ? image
-      : `https://prarambha-backend.onrender.com${image}`
+      : `https://lightgrey-squid-753475.hostingersite.com${image}`
   }
   return (
 
@@ -313,7 +313,7 @@ function StoryEditor() {
                       setLoading(true)
 
                       await axios.put(
-                        `https://prarambha-backend.onrender.com/api/stories/${story._id}`,
+                        `https://lightgrey-squid-753475.hostingersite.com/api/stories/${story._id}`,
                         story
                       )
 
@@ -496,7 +496,7 @@ function StoryEditor() {
 
                     const { data } =
                       await axios.post(
-                        "https://prarambha-backend.onrender.com/api/upload",
+                        "https://lightgrey-squid-753475.hostingersite.com/api/upload",
                         formData
                       )
 

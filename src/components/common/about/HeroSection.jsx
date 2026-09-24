@@ -183,7 +183,7 @@ export default function HeroSection({ data }) {
                 data?.image
                   ? data.image.startsWith("http")
                     ? data.image
-                    : `https://prarambha-backend.onrender.com${data.image}`
+                    : `https://lightgrey-squid-753475.hostingersite.com${data.image}`
                   : "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&q=80"
               }
 

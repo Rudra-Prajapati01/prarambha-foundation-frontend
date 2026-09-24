@@ -45,7 +45,7 @@ export default function About() {
 
           const response =
             await fetch(
-              "https://prarambha-backend.onrender.com/api/pages/about"
+              "https://lightgrey-squid-753475.hostingersite.com/api/pages/about"
             )
 
           const data =

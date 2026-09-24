@@ -26,7 +26,7 @@ function StoryDetails() {
 
                 const { data } =
                     await axios.get(
-                        `https://prarambha-backend.onrender.com/api/stories/${id}`
+                        `https://lightgrey-squid-753475.hostingersite.com/api/stories/${id}`
                     )
 
                 setStory(data)

@@ -56,7 +56,7 @@ function FooterEditor({
 
       const response =
         await fetch(
-          "https://prarambha-backend.onrender.com/api/logo/footer-logo",
+          "https://lightgrey-squid-753475.hostingersite.com/api/logo/footer-logo",
           {
             method: "POST",
             body: formData,
@@ -121,7 +121,7 @@ function FooterEditor({
 
         const response =
           await fetch(
-            "https://prarambha-backend.onrender.com/api/pages/footer",
+            "https://lightgrey-squid-753475.hostingersite.com/api/pages/footer",
             {
 
               method: "PUT",
@@ -243,7 +243,7 @@ function FooterEditor({
                 src={
                   footer.logo?.startsWith("http")
                     ? footer.logo
-                    : `https://prarambha-backend.onrender.com${footer.logo}`
+                    : `https://lightgrey-squid-753475.hostingersite.com${footer.logo}`
                 }
 
                 alt="logo preview"
@@ -582,7 +582,7 @@ function FooterEditor({
               src={
                 footer.logo?.startsWith("http")
                   ? footer.logo
-                  : `https://prarambha-backend.onrender.com${footer.logo}`
+                  : `https://lightgrey-squid-753475.hostingersite.com${footer.logo}`
               }
 
               alt="preview"

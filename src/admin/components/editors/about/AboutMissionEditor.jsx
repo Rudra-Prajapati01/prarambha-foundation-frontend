@@ -13,7 +13,7 @@ function AboutMissionEditor({
     pageData?.mission?.image
       ? pageData.mission.image.startsWith("http")
         ? pageData.mission.image
-        : `https://prarambha-backend.onrender.com${pageData.mission.image}`
+        : `https://lightgrey-squid-753475.hostingersite.com${pageData.mission.image}`
       : "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80"
 
   return (

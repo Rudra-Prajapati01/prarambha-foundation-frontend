@@ -145,7 +145,7 @@ function AboutTeamEditor({
               member.image
                 ? member.image.startsWith("http")
                   ? member.image
-                  : `https://prarambha-backend.onrender.com${member.image}`
+                  : `https://lightgrey-squid-753475.hostingersite.com${member.image}`
                 : "https://i.pravatar.cc/150"
 
             return (
@@ -290,7 +290,7 @@ function AboutTeamEditor({
 
                         const response =
                           await fetch(
-                            "https://prarambha-backend.onrender.com/api/upload",
+                            "https://lightgrey-squid-753475.hostingersite.com/api/upload",
                             {
                               method: "POST",
                               body: formData,

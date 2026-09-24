@@ -47,7 +47,7 @@ export function PageProvider({
 
         const { data } =
           await axios.get(
-            "https://prarambha-backend.onrender.com/api/pages/home"
+            "https://lightgrey-squid-753475.hostingersite.com/api/pages/home"
           )
 
         setPageData(data)

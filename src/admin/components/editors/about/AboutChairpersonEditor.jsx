@@ -13,7 +13,7 @@ function AboutChairpersonEditor({
     pageData?.chairperson?.image
       ? pageData.chairperson.image.startsWith("http")
         ? pageData.chairperson.image
-        : `https://prarambha-backend.onrender.com${pageData.chairperson.image}`
+        : `https://lightgrey-squid-753475.hostingersite.com${pageData.chairperson.image}`
       : "https://i.pravatar.cc/500?img=47"
 
   return (

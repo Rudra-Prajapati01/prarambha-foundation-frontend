@@ -13,7 +13,7 @@ function TeamCard({
     image
       ? image.startsWith("http")
         ? image
-        : `https://prarambha-backend.onrender.com${image}`
+        : `https://lightgrey-squid-753475.hostingersite.com${image}`
       : "https://i.pravatar.cc/300"
 
   return (

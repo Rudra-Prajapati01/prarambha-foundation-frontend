@@ -33,7 +33,7 @@ function GalleryDetails() {
     return typeof image === "string"
       && image.startsWith("http")
       ? image
-      : `https://prarambha-backend.onrender.com${image}`
+      : `https://lightgrey-squid-753475.hostingersite.com${image}`
   }
 
   /* =====================================

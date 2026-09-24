@@ -8,7 +8,7 @@ export default function MissionSection({ data }) {
     data?.image
       ? data.image.startsWith("http")
         ? data.image
-        : `https://prarambha-backend.onrender.com${data.image}`
+        : `https://lightgrey-squid-753475.hostingersite.com${data.image}`
       : "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80"
 
   return (

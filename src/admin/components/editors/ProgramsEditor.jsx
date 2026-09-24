@@ -187,7 +187,7 @@ function ProgramsEditor({
 
       const uploadResponse =
         await fetch(
-          "https://prarambha-backend.onrender.com/api/upload",
+          "https://lightgrey-squid-753475.hostingersite.com/api/upload",
           {
             method: "POST",
             body: formData,
@@ -218,7 +218,7 @@ function ProgramsEditor({
       ========================= */
 
       await fetch(
-        "https://prarambha-backend.onrender.com/api/pages/home",
+        "https://lightgrey-squid-753475.hostingersite.com/api/pages/home",
         {
           method: "PUT",
 
@@ -251,7 +251,7 @@ function ProgramsEditor({
     return typeof image === "string"
       && image.startsWith("http")
       ? image
-      : `https://prarambha-backend.onrender.com${image}`
+      : `https://lightgrey-squid-753475.hostingersite.com${image}`
   }
 
   return (

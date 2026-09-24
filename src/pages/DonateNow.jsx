@@ -42,7 +42,7 @@ export default function DonateNow() {
 
           const response =
             await fetch(
-              "https://prarambha-backend.onrender.com/api/pages/donate"
+              "https://lightgrey-squid-753475.hostingersite.com/api/pages/donate"
             )
 
           if (!response.ok) {

@@ -26,7 +26,7 @@ function Story() {
     return typeof image === "string"
       && image.startsWith("http")
         ? image
-        : `https://prarambha-backend.onrender.com${image}`
+        : `https://lightgrey-squid-753475.hostingersite.com${image}`
   }
 
   /* =====================================
@@ -42,7 +42,7 @@ function Story() {
 
           const { data } =
             await axios.get(
-              "https://prarambha-backend.onrender.com/api/stories"
+              "https://lightgrey-squid-753475.hostingersite.com/api/stories"
             )
 
           setStories(

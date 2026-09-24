@@ -50,7 +50,7 @@ function MissionEditor({
 
       const { data } =
         await axios.post(
-          "https://prarambha-backend.onrender.com/api/upload",
+          "https://lightgrey-squid-753475.hostingersite.com/api/upload",
           formData
         )
 
@@ -73,7 +73,7 @@ function MissionEditor({
     pageData.mission?.image
       ? pageData.mission.image.startsWith("http")
         ? pageData.mission.image
-        : `https://prarambha-backend.onrender.com${pageData.mission.image}`
+        : `https://lightgrey-squid-753475.hostingersite.com${pageData.mission.image}`
       : "https://via.placeholder.com/1200x700?text=Mission+Image"
 
   return (
