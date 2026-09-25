@@ -283,7 +283,7 @@ export default function CommunitySupport() {
                 the knowledge, strategies, and emotional support needed to confidently nurture 
                 your child's development, handle daily challenges, and create a thriving home environment.
               </p>
-              <a href="/contact" className="hero-btn">Get Support</a>
+              <a href="/support-us" className="hero-btn">Get Support</a>
             </div>
             <div className="hero-image">
               <img

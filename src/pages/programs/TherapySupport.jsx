@@ -272,7 +272,7 @@ export default function TherapySupport() {
                 Through our Individualised Learning Plans (ILP), we provide structured, 
                 step-by-step support tailored exactly to each child's pace and ability.
               </p>
-              <a href="/contact" className="hero-btn">Get Support</a>
+              <a href="/support-us" className="hero-btn">Get Support</a>
             </div>
             <div className="hero-image">
               <img

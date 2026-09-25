@@ -146,9 +146,11 @@ export default function HeroSection({ data }) {
               {data?.subtitle || "About Us"}
             </div>
 
+
             <h1 className="hero-title">
               {data?.title || "Empowering Every Child With Inclusion"}
             </h1>
+
 
             <p className="hero-desc">
               {
@@ -157,14 +159,18 @@ export default function HeroSection({ data }) {
               }
             </p>
 
+
+            {/* EXPLORE PROGRAMS BUTTON */}
+
             <a
-              href="#mission"
+              href="/programs/early-intervention"
               className="hero-cta"
             >
-              {data?.buttonText || "Learn More"}
+              {data?.buttonText || "Explore Programs"}
             </a>
 
           </div>
+
 
           {/* RIGHT IMAGE */}
 
@@ -172,11 +178,15 @@ export default function HeroSection({ data }) {
 
             <div className="hero-blob"></div>
 
+
             <div className="dots-decor">
+
               {Array.from({ length: 25 }).map((_, i) => (
                 <span key={i}></span>
               ))}
+
             </div>
+
 
             <img
               src={
@@ -195,6 +205,7 @@ export default function HeroSection({ data }) {
 
                 e.target.src =
                   "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&q=80"
+
               }}
 
               loading="lazy"
@@ -205,6 +216,7 @@ export default function HeroSection({ data }) {
         </div>
 
       </div>
+
     </>
   )
 }

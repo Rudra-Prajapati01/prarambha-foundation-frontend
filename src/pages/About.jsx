@@ -9,8 +9,7 @@ import CTASection from "../components/common/about/CTASection"
 import Navbar from "../components/common/Navbar"
 import Footer from "../components/common/Footer"
 
-import { usePageData }
-from "../context/PageContext"
+import { usePageData } from "../context/PageContext"
 
 export default function About() {
 
@@ -22,6 +21,7 @@ export default function About() {
     pageData: globalPageData,
   } = usePageData()
 
+
   /* =====================================
       ABOUT PAGE DATA
   ===================================== */
@@ -32,40 +32,42 @@ export default function About() {
   const [loading, setLoading] =
     useState(true)
 
+
   /* =====================================
       FETCH ABOUT PAGE
   ===================================== */
 
   useEffect(() => {
 
-    const fetchPage =
-      async () => {
+    const fetchPage = async () => {
 
-        try {
+      try {
 
-          const response =
-            await fetch(
-              "https://lightgrey-squid-753475.hostingersite.com/api/pages/about"
-            )
+        const response = await fetch(
+          "https://lightgrey-squid-753475.hostingersite.com/api/pages/about"
+        )
 
-          const data =
-            await response.json()
+        const data =
+          await response.json()
 
-          setAboutData(data)
+        setAboutData(data)
 
-        } catch (error) {
+      } catch (error) {
 
-          console.log(error)
+        console.log(error)
 
-        } finally {
+      } finally {
 
-          setLoading(false)
-        }
+        setLoading(false)
+
       }
+
+    }
 
     fetchPage()
 
   }, [])
+
 
   /* =====================================
       LOADING
@@ -77,9 +79,18 @@ export default function About() {
 
       <>
 
+        {/* =====================================
+            NAVBAR
+        ===================================== */}
+
         <Navbar
           pageData={globalPageData}
         />
+
+
+        {/* =====================================
+            LOADING SCREEN
+        ===================================== */}
 
         <div
           style={{
@@ -101,14 +112,11 @@ export default function About() {
               style={{
                 width: "70px",
                 height: "70px",
-                border:
-                  "5px solid #E63946",
-                borderTop:
-                  "5px solid transparent",
+                border: "5px solid #E63946",
+                borderTop: "5px solid transparent",
                 borderRadius: "50%",
                 margin: "0 auto 20px",
-                animation:
-                  "spin 1s linear infinite",
+                animation: "spin 1s linear infinite",
               }}
             />
 
@@ -126,6 +134,11 @@ export default function About() {
 
         </div>
 
+
+        {/* =====================================
+            LOADING ANIMATION
+        ===================================== */}
+
         <style>{`
           @keyframes spin {
             100% {
@@ -135,8 +148,11 @@ export default function About() {
         `}</style>
 
       </>
+
     )
+
   }
+
 
   /* =====================================
       PAGE
@@ -154,13 +170,21 @@ export default function About() {
         pageData={globalPageData}
       />
 
+
       {/* =====================================
           HERO
       ===================================== */}
 
       <HeroSection
         data={aboutData?.hero}
+
+        /* =====================================
+            EXPLORE PROGRAMS LINK
+        ===================================== */
+
+        programsLink="/programs/early-intervention"
       />
+
 
       {/* =====================================
           MISSION
@@ -170,6 +194,7 @@ export default function About() {
         data={aboutData?.mission}
       />
 
+
       {/* =====================================
           CHAIRPERSON
       ===================================== */}
@@ -177,6 +202,7 @@ export default function About() {
       <ChairpersonSection
         data={aboutData?.chairperson}
       />
+
 
       {/* =====================================
           TEAM
@@ -186,6 +212,7 @@ export default function About() {
         data={aboutData?.team}
       />
 
+
       {/* =====================================
           CTA
       ===================================== */}
@@ -193,6 +220,7 @@ export default function About() {
       <CTASection
         data={aboutData?.cta}
       />
+
 
       {/* =====================================
           FOOTER
@@ -203,5 +231,6 @@ export default function About() {
       />
 
     </>
+
   )
 }

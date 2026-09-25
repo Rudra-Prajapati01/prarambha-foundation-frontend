@@ -251,7 +251,7 @@ export default function GuidanceOnTherapySupport() {
                 Explore when therapy is required, the different types of therapies available, 
                 and how we connect you with the right professionals.
               </p>
-              <a href="/contact" className="hero-btn">Consult With Us</a>
+              <a href="/support-us" className="hero-btn">Get Support</a>
             </div>
             <div className="hero-image">
               <img

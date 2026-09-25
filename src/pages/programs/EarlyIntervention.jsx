@@ -329,7 +329,7 @@ export default function EarlyIntervention() {
                 developmental challenges through structured,
                 child-centered intervention programs.
               </p>
-              <a href="/contact" className="hero-btn">Get Support</a>
+              <a href="/support-us" className="hero-btn">Get Support</a>
             </div>
             <div className="hero-image">
               <img

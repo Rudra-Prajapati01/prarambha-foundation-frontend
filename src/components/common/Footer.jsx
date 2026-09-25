@@ -470,7 +470,7 @@ function Footer({ pageData }) {
             {/* DONATE BUTTON */}
 
             <Link
-              to="/contact"
+              to="/support-us"
 
               className="
                 mt-6
